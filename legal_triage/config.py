@@ -86,16 +86,16 @@ class Settings:
                 os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
             ),
             chat_model=validate_local_model_name(
-                os.getenv("OLLAMA_MODEL", "gemma4:e2b"), "OLLAMA_MODEL"
+                os.getenv("OLLAMA_MODEL", "gemma4:e4b"), "OLLAMA_MODEL"
             ),
             embedding_model=validate_local_model_name(
                 os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text"), "OLLAMA_EMBED_MODEL"
             ),
             chunk_size=_positive_int("CHUNK_SIZE", 1100),
             chunk_overlap=_positive_int("CHUNK_OVERLAP", 180),
-            top_k_question=_positive_int("TOP_K_QUESTION", 7),
+            top_k_question=_positive_int("TOP_K_QUESTION", 12),
             top_k_triage=_positive_int("TOP_K_TRIAGE", 12),
-            min_retrieval_similarity=_score("MIN_RETRIEVAL_SIMILARITY", 0.25),
+            min_retrieval_similarity=_score("MIN_RETRIEVAL_SIMILARITY", 0.15),
             max_file_mb=_positive_int("MAX_FILE_MB", 20),
             max_files=_positive_int("MAX_FILES", 10),
             max_pages=_positive_int("MAX_PAGES", 1500),

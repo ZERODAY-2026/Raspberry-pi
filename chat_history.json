@@ -1,0 +1,944 @@
+[
+  {
+    "role": "user",
+    "content": "Deadline to pay rent"
+  },
+  {
+    "role": "user",
+    "content": "Rent payment deadline?"
+  },
+  {
+    "role": "assistant",
+    "question": "Rent payment deadline?",
+    "mode": "question",
+    "result": {
+      "findings": [
+        {
+          "category": "explicit_statement",
+          "claim": "The tenant must pay the monthly rent in advance, and the deadline is on or before the fifth calendar day of each month.",
+          "evidence": [
+            {
+              "source_id": "E1",
+              "quote": "The Tenant shall pay INR 25,000 per month in advance, on or before the fifth calendar day of each month, by bank",
+              "source": {
+                "source_id": "E1",
+                "filename": "01_rental_agreement_clear.pdf",
+                "page_number": 1,
+                "all_pages": [
+                  1
+                ],
+                "text": "SYNTHETIC PS2 TEST FILE - NOT FOR REAL-WORLD USE\nPage 1\n Residential Rental Agreement\n TEST CASE 1: clear clauses, explicit deadlines and source-citation checks\n SYNTHETIC TEST DOCUMENT - fictional parties and terms; for software testing only; not a real contract or legal\n advice.\nParties and premises\nThis fictional agreement is dated 1 October 2026 between Asha Rao (Owner) and Kiran Das (Tenant) for the\nresidential unit identified as Flat 4B, 18 Lake View Road, Example City. The names and address are invented.\n1. Term\nThe tenancy begins on 1 October 2026 and is scheduled to end on 30 September 2027, unless ended earlier under a\nclause in this agreement.\n2. Monthly rent\nThe Tenant shall pay INR 25,000 per month in advance, on or before the fifth calendar day of each month, by bank\ntransfer to the account designated by the Owner.\n3. Security deposit\nThe Tenant shall pay an interest-free security deposit of INR 50,000 before receiving the keys. The deposit is security\nfor unpaid rent and documented damage beyond ordinary wear and tear.\n4. Utilities\nThe Tenant is responsible for",
+                "similarity": 0.6972
+              }
+            }
+          ],
+          "lawyer_question": "",
+          "topic": "money",
+          "attention": "high",
+          "support": [
+            "quote_valid",
+            "numbers_verified",
+            "verifier_agrees"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "E1",
+          "filename": "01_rental_agreement_clear.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "SYNTHETIC PS2 TEST FILE - NOT FOR REAL-WORLD USE\nPage 1\n Residential Rental Agreement\n TEST CASE 1: clear clauses, explicit deadlines and source-citation checks\n SYNTHETIC TEST DOCUMENT - fictional parties and terms; for software testing only; not a real contract or legal\n advice.\nParties and premises\nThis fictional agreement is dated 1 October 2026 between Asha Rao (Owner) and Kiran Das (Tenant) for the\nresidential unit identified as Flat 4B, 18 Lake View Road, Example City. The names and address are invented.\n1. Term\nThe tenancy begins on 1 October 2026 and is scheduled to end on 30 September 2027, unless ended earlier under a\nclause in this agreement.\n2. Monthly rent\nThe Tenant shall pay INR 25,000 per month in advance, on or before the fifth calendar day of each month, by bank\ntransfer to the account designated by the Owner.\n3. Security deposit\nThe Tenant shall pay an interest-free security deposit of INR 50,000 before receiving the keys. The deposit is security\nfor unpaid rent and documented damage beyond ordinary wear and tear.\n4. Utilities\nThe Tenant is responsible for",
+          "similarity": 0.6972
+        },
+        {
+          "source_id": "E2",
+          "filename": "01_rental_agreement_clear.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "Notice must be delivered by\nemail followed by a signed hard copy.\n9. Deposit return\nWithin 15 working days after the Tenant returns all keys and vacates, the Owner will return the remaining deposit\nafter deducting unpaid amounts and documented damage beyond ordinary wear and tear.\n10. Document limitation\nThis synthetic example does not state which local tenancy law applies, and it does not determine whether any term is\nlegally enforceable.",
+          "similarity": 0.6736
+        },
+        {
+          "source_id": "E3",
+          "filename": "01_rental_agreement_clear.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "sit of INR 50,000 before receiving the keys. The deposit is security\nfor unpaid rent and documented damage beyond ordinary wear and tear.\n4. Utilities\nThe Tenant is responsible for electricity and internet charges based on bills for the unit. The Owner is responsible for\nthe building's common-area electricity charge.",
+          "similarity": 0.6308
+        },
+        {
+          "source_id": "E4",
+          "filename": "01_rental_agreement_clear.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "SYNTHETIC PS2 TEST FILE - NOT FOR REAL-WORLD USE\nPage 2\nResidential Rental Agreement - continued\n SYNTHETIC TEST DOCUMENT - fictional parties and terms; for software testing only; not a real contract or legal\n advice.\nUse, maintenance and termination\n5. Permitted use\nThe unit may be used as a private residence by the Tenant and one additional occupant listed in the move-in form.\nThe Tenant must obtain written consent before subletting.\n6. Repairs\nThe Tenant must report water leaks or electrical faults promptly. The Owner will arrange repairs to structural systems.\nThe agreement does not define a specific number of days for non-emergency repairs.\n7. Access\nExcept for an emergency, the Owner will give at least 24 hours notice before entering the unit for inspection or\nrepairs, at a reasonable time.\n8. Notice to terminate\nEither party may end the tenancy by giving 60 days written notice to the other party. Notice must be delivered by\nemail followed by a signed hard copy.\n9. Deposit return\nWithin 15 working days after the Tenant returns all keys and vacates, the Owner will return the",
+          "similarity": 0.6437
+        }
+      ],
+      "top_similarity": 0.6972,
+      "abstained": false,
+      "legal_boundary": false,
+      "message": "Findings below are limited to claims that passed source-ID and verbatim-quote checks. Review the quote before relying on an interpretation.",
+      "reason": "validated_findings"
+    }
+  },
+  {
+    "role": "user",
+    "content": "What is the client  name?"
+  },
+  {
+    "role": "assistant",
+    "question": "What is the client  name?",
+    "mode": "question",
+    "result": {
+      "findings": [
+        {
+          "category": "explicit_statement",
+          "claim": "The client mentioned in the legal notice is M/s. TechNova Computers Pvt. Ltd.",
+          "evidence": [
+            {
+              "source_id": "E1",
+              "quote": "Under instructions and authority from my client M/s. TechNova Computers Pvt. Ltd. we serve upon you",
+              "source": {
+                "source_id": "E1",
+                "filename": "legal document.pdf",
+                "page_number": 1,
+                "all_pages": [
+                  1
+                ],
+                "text": "LEGAL NOTICE \n \nTo,                                                                                                                               Date: 12/07/2019 \nM/s. Sharma Office Solutions Pvt. Ltd., through its Director Mr. Anil Sharma \nNo. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad, Karnataka - 580004 \nMobile: +91 98450 12345 | E-mail: accounts@sharmaoffice.example.com \n \nSub: Legal notice under section 138 of Negotiable Instrument Act for dishonour of cheque. \n \nDear Sir/Madam, \n \nUnder instructions and authority from my client M/s. TechNova Computers Pvt. Ltd. we serve upon you \nthe following legal notice. \n1. That my client is a Private Limited Company engaged in trading of computers, laptops, computer \nparts and accessories the name of TechNova Computers Pvt. Ltd. having office at Plot No. 18, \nGokul Road Industrial Estate, Hubballi, Karnataka - 580030. \n2. That in the year 2019 you have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you",
+                "similarity": 0.5529
+              }
+            },
+            {
+              "source_id": "E4",
+              "quote": "our client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, Vidyanagar Branch,",
+              "source": {
+                "source_id": "E4",
+                "filename": "legal document.pdf",
+                "page_number": 1,
+                "all_pages": [
+                  1
+                ],
+                "text": "u have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you have issued purchase order dated 04/04/2019 amounting to rupees \n14,75,000/- for 25 (twenty-five) Dell Inspiron laptops. \n3. That you have promised our client to pay the cost of the product in the form of Current Dated \nCheque as mentioned in the purchase order. \n4. That our client had relied on your promise and as instructed by you delivered the said laptops at \nyour office at No. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad vide Invoice No. \nTNC/2019-20/0231 dated 10/04/2019. \n5. That you have issued Cheque No. 456789 dated 10/06/2019 for Rs. 14,75,000/- (Rupees Fourteen \nLakh Seventy-Five Thousand only) drawn on HDFC Bank, Vidyanagar Branch, Dharwad \ntowards payment against the Invoice. \n6. That the aforesaid cheques No. 456789 dated 10/06/2019 for Rs. 14,75,000/- was presented by \nour client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, \nVidyanagar Branch,",
+                "similarity": 0.4992
+              }
+            }
+          ],
+          "lawyer_question": "",
+          "topic": "general",
+          "attention": "low",
+          "support": [
+            "quote_valid",
+            "verifier_agrees"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "E1",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "LEGAL NOTICE \n \nTo,                                                                                                                               Date: 12/07/2019 \nM/s. Sharma Office Solutions Pvt. Ltd., through its Director Mr. Anil Sharma \nNo. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad, Karnataka - 580004 \nMobile: +91 98450 12345 | E-mail: accounts@sharmaoffice.example.com \n \nSub: Legal notice under section 138 of Negotiable Instrument Act for dishonour of cheque. \n \nDear Sir/Madam, \n \nUnder instructions and authority from my client M/s. TechNova Computers Pvt. Ltd. we serve upon you \nthe following legal notice. \n1. That my client is a Private Limited Company engaged in trading of computers, laptops, computer \nparts and accessories the name of TechNova Computers Pvt. Ltd. having office at Plot No. 18, \nGokul Road Industrial Estate, Hubballi, Karnataka - 580030. \n2. That in the year 2019 you have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you",
+          "similarity": 0.5529
+        },
+        {
+          "source_id": "E2",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "ues No. 456789 dated 10/06/2019 for Rs. 14,75,000/- was presented by \nour client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, \nVidyanagar Branch, Dharwad. \n7. Our clients shock and surprise the said cheque had been dishonoured by your bankers with the \nreason “Fund Insufficient” which was intimated to our client by their bankers, ICICI Bank, \nHubballi Branch, through their cheque return memo dated 14/06/2019. \n8. That there after inspite of many telephonic reminders by my client, you failed to make the \npayment due to my client. \n9. That it is now clear that you had dishonest intention at the time of purchasing the said laptops \nfrom my client and deceived my client to the tune of Rs. 14,75,000/-. \n10. My client states that you have issued the above said cheques only with an intention to cheat our \nclient which amounts to an offence punishable under section 138 of Negotiable Instruments Act. \n11. Under the circumstances, we call upon you to pay of Rs. 14,75,000/- within a period of 15 \n(fifteen) days from the date of receipt of this notice, failing",
+          "similarity": 0.5046
+        },
+        {
+          "source_id": "E3",
+          "filename": "legal document.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "to take legal action against you in a court of law for an offence punishable under section 138 of \nNegotiable Instruments Act for which you will be liable for all costs and consequences. \n12. This is without prejudice to all other legal rights and remedies available to our client for the \nabove-stated purpose. \n13. You are liable to pay a sum of Rs. 5,500/- as necessary cost and expenses of sending the present \nlegal notice to you. \n14. Copy of this legal notice is also kept at my office for further ready reference it required in future. \n \nYours faithfully, \nAdv. Prakash R. Deshpande \n(Advocate)",
+          "similarity": 0.4968
+        },
+        {
+          "source_id": "E4",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "u have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you have issued purchase order dated 04/04/2019 amounting to rupees \n14,75,000/- for 25 (twenty-five) Dell Inspiron laptops. \n3. That you have promised our client to pay the cost of the product in the form of Current Dated \nCheque as mentioned in the purchase order. \n4. That our client had relied on your promise and as instructed by you delivered the said laptops at \nyour office at No. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad vide Invoice No. \nTNC/2019-20/0231 dated 10/04/2019. \n5. That you have issued Cheque No. 456789 dated 10/06/2019 for Rs. 14,75,000/- (Rupees Fourteen \nLakh Seventy-Five Thousand only) drawn on HDFC Bank, Vidyanagar Branch, Dharwad \ntowards payment against the Invoice. \n6. That the aforesaid cheques No. 456789 dated 10/06/2019 for Rs. 14,75,000/- was presented by \nour client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, \nVidyanagar Branch,",
+          "similarity": 0.4992
+        },
+        {
+          "source_id": "E5",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "ble Instruments Act. \n11. Under the circumstances, we call upon you to pay of Rs. 14,75,000/- within a period of 15 \n(fifteen) days from the date of receipt of this notice, failing which our client will be constrained",
+          "similarity": 0.4784
+        }
+      ],
+      "top_similarity": 0.5529,
+      "abstained": false,
+      "legal_boundary": false,
+      "message": "Findings below are limited to claims that passed source-ID and verbatim-quote checks. Review the quote before relying on an interpretation.",
+      "reason": "validated_findings"
+    }
+  },
+  {
+    "role": "user",
+    "content": "who sent this document and to whom?"
+  },
+  {
+    "role": "assistant",
+    "question": "who sent this document and to whom?",
+    "mode": "question",
+    "result": {
+      "findings": [],
+      "sources": [
+        {
+          "source_id": "E1",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "LEGAL NOTICE \n \nTo,                                                                                                                               Date: 12/07/2019 \nM/s. Sharma Office Solutions Pvt. Ltd., through its Director Mr. Anil Sharma \nNo. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad, Karnataka - 580004 \nMobile: +91 98450 12345 | E-mail: accounts@sharmaoffice.example.com \n \nSub: Legal notice under section 138 of Negotiable Instrument Act for dishonour of cheque. \n \nDear Sir/Madam, \n \nUnder instructions and authority from my client M/s. TechNova Computers Pvt. Ltd. we serve upon you \nthe following legal notice. \n1. That my client is a Private Limited Company engaged in trading of computers, laptops, computer \nparts and accessories the name of TechNova Computers Pvt. Ltd. having office at Plot No. 18, \nGokul Road Industrial Estate, Hubballi, Karnataka - 580030. \n2. That in the year 2019 you have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you",
+          "similarity": 0.5997
+        },
+        {
+          "source_id": "E2",
+          "filename": "legal document.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "to take legal action against you in a court of law for an offence punishable under section 138 of \nNegotiable Instruments Act for which you will be liable for all costs and consequences. \n12. This is without prejudice to all other legal rights and remedies available to our client for the \nabove-stated purpose. \n13. You are liable to pay a sum of Rs. 5,500/- as necessary cost and expenses of sending the present \nlegal notice to you. \n14. Copy of this legal notice is also kept at my office for further ready reference it required in future. \n \nYours faithfully, \nAdv. Prakash R. Deshpande \n(Advocate)",
+          "similarity": 0.5758
+        },
+        {
+          "source_id": "E3",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "ues No. 456789 dated 10/06/2019 for Rs. 14,75,000/- was presented by \nour client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, \nVidyanagar Branch, Dharwad. \n7. Our clients shock and surprise the said cheque had been dishonoured by your bankers with the \nreason “Fund Insufficient” which was intimated to our client by their bankers, ICICI Bank, \nHubballi Branch, through their cheque return memo dated 14/06/2019. \n8. That there after inspite of many telephonic reminders by my client, you failed to make the \npayment due to my client. \n9. That it is now clear that you had dishonest intention at the time of purchasing the said laptops \nfrom my client and deceived my client to the tune of Rs. 14,75,000/-. \n10. My client states that you have issued the above said cheques only with an intention to cheat our \nclient which amounts to an offence punishable under section 138 of Negotiable Instruments Act. \n11. Under the circumstances, we call upon you to pay of Rs. 14,75,000/- within a period of 15 \n(fifteen) days from the date of receipt of this notice, failing",
+          "similarity": 0.5732
+        },
+        {
+          "source_id": "E4",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "u have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you have issued purchase order dated 04/04/2019 amounting to rupees \n14,75,000/- for 25 (twenty-five) Dell Inspiron laptops. \n3. That you have promised our client to pay the cost of the product in the form of Current Dated \nCheque as mentioned in the purchase order. \n4. That our client had relied on your promise and as instructed by you delivered the said laptops at \nyour office at No. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad vide Invoice No. \nTNC/2019-20/0231 dated 10/04/2019. \n5. That you have issued Cheque No. 456789 dated 10/06/2019 for Rs. 14,75,000/- (Rupees Fourteen \nLakh Seventy-Five Thousand only) drawn on HDFC Bank, Vidyanagar Branch, Dharwad \ntowards payment against the Invoice. \n6. That the aforesaid cheques No. 456789 dated 10/06/2019 for Rs. 14,75,000/- was presented by \nour client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, \nVidyanagar Branch,",
+          "similarity": 0.5545
+        },
+        {
+          "source_id": "E5",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "ble Instruments Act. \n11. Under the circumstances, we call upon you to pay of Rs. 14,75,000/- within a period of 15 \n(fifteen) days from the date of receipt of this notice, failing which our client will be constrained",
+          "similarity": 0.5332
+        }
+      ],
+      "top_similarity": 0.5997,
+      "abstained": true,
+      "message": "The document is silent on this in the passages I could retrieve, so I will not invent an answer. This does not prove the full document has no relevant clause: retrieval or PDF text extraction may have missed it. Check the cited sections or try a more specific search.",
+      "reason": "no_validated_quote_evidence",
+      "legal_boundary": false
+    }
+  },
+  {
+    "role": "user",
+    "content": "when was the cheque bounced?"
+  },
+  {
+    "role": "assistant",
+    "question": "when was the cheque bounced?",
+    "mode": "question",
+    "result": {
+      "findings": [],
+      "sources": [
+        {
+          "source_id": "E1",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "ues No. 456789 dated 10/06/2019 for Rs. 14,75,000/- was presented by \nour client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, \nVidyanagar Branch, Dharwad. \n7. Our clients shock and surprise the said cheque had been dishonoured by your bankers with the \nreason “Fund Insufficient” which was intimated to our client by their bankers, ICICI Bank, \nHubballi Branch, through their cheque return memo dated 14/06/2019. \n8. That there after inspite of many telephonic reminders by my client, you failed to make the \npayment due to my client. \n9. That it is now clear that you had dishonest intention at the time of purchasing the said laptops \nfrom my client and deceived my client to the tune of Rs. 14,75,000/-. \n10. My client states that you have issued the above said cheques only with an intention to cheat our \nclient which amounts to an offence punishable under section 138 of Negotiable Instruments Act. \n11. Under the circumstances, we call upon you to pay of Rs. 14,75,000/- within a period of 15 \n(fifteen) days from the date of receipt of this notice, failing",
+          "similarity": 0.6875
+        },
+        {
+          "source_id": "E2",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "u have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you have issued purchase order dated 04/04/2019 amounting to rupees \n14,75,000/- for 25 (twenty-five) Dell Inspiron laptops. \n3. That you have promised our client to pay the cost of the product in the form of Current Dated \nCheque as mentioned in the purchase order. \n4. That our client had relied on your promise and as instructed by you delivered the said laptops at \nyour office at No. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad vide Invoice No. \nTNC/2019-20/0231 dated 10/04/2019. \n5. That you have issued Cheque No. 456789 dated 10/06/2019 for Rs. 14,75,000/- (Rupees Fourteen \nLakh Seventy-Five Thousand only) drawn on HDFC Bank, Vidyanagar Branch, Dharwad \ntowards payment against the Invoice. \n6. That the aforesaid cheques No. 456789 dated 10/06/2019 for Rs. 14,75,000/- was presented by \nour client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, \nVidyanagar Branch,",
+          "similarity": 0.6166
+        },
+        {
+          "source_id": "E3",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "ble Instruments Act. \n11. Under the circumstances, we call upon you to pay of Rs. 14,75,000/- within a period of 15 \n(fifteen) days from the date of receipt of this notice, failing which our client will be constrained",
+          "similarity": 0.5878
+        },
+        {
+          "source_id": "E4",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "LEGAL NOTICE \n \nTo,                                                                                                                               Date: 12/07/2019 \nM/s. Sharma Office Solutions Pvt. Ltd., through its Director Mr. Anil Sharma \nNo. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad, Karnataka - 580004 \nMobile: +91 98450 12345 | E-mail: accounts@sharmaoffice.example.com \n \nSub: Legal notice under section 138 of Negotiable Instrument Act for dishonour of cheque. \n \nDear Sir/Madam, \n \nUnder instructions and authority from my client M/s. TechNova Computers Pvt. Ltd. we serve upon you \nthe following legal notice. \n1. That my client is a Private Limited Company engaged in trading of computers, laptops, computer \nparts and accessories the name of TechNova Computers Pvt. Ltd. having office at Plot No. 18, \nGokul Road Industrial Estate, Hubballi, Karnataka - 580030. \n2. That in the year 2019 you have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you",
+          "similarity": 0.5707
+        },
+        {
+          "source_id": "E5",
+          "filename": "legal document.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "to take legal action against you in a court of law for an offence punishable under section 138 of \nNegotiable Instruments Act for which you will be liable for all costs and consequences. \n12. This is without prejudice to all other legal rights and remedies available to our client for the \nabove-stated purpose. \n13. You are liable to pay a sum of Rs. 5,500/- as necessary cost and expenses of sending the present \nlegal notice to you. \n14. Copy of this legal notice is also kept at my office for further ready reference it required in future. \n \nYours faithfully, \nAdv. Prakash R. Deshpande \n(Advocate)",
+          "similarity": 0.5045
+        }
+      ],
+      "top_similarity": 0.6875,
+      "abstained": true,
+      "message": "The document is silent on this in the passages I could retrieve, so I will not invent an answer. This does not prove the full document has no relevant clause: retrieval or PDF text extraction may have missed it. Check the cited sections or try a more specific search.",
+      "reason": "no_validated_quote_evidence",
+      "legal_boundary": false
+    }
+  },
+  {
+    "role": "user",
+    "content": "what the the cheque amount?"
+  },
+  {
+    "role": "assistant",
+    "question": "what the the cheque amount?",
+    "mode": "question",
+    "result": {
+      "findings": [],
+      "sources": [
+        {
+          "source_id": "E1",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "ues No. 456789 dated 10/06/2019 for Rs. 14,75,000/- was presented by \nour client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, \nVidyanagar Branch, Dharwad. \n7. Our clients shock and surprise the said cheque had been dishonoured by your bankers with the \nreason “Fund Insufficient” which was intimated to our client by their bankers, ICICI Bank, \nHubballi Branch, through their cheque return memo dated 14/06/2019. \n8. That there after inspite of many telephonic reminders by my client, you failed to make the \npayment due to my client. \n9. That it is now clear that you had dishonest intention at the time of purchasing the said laptops \nfrom my client and deceived my client to the tune of Rs. 14,75,000/-. \n10. My client states that you have issued the above said cheques only with an intention to cheat our \nclient which amounts to an offence punishable under section 138 of Negotiable Instruments Act. \n11. Under the circumstances, we call upon you to pay of Rs. 14,75,000/- within a period of 15 \n(fifteen) days from the date of receipt of this notice, failing",
+          "similarity": 0.6814
+        },
+        {
+          "source_id": "E2",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "ble Instruments Act. \n11. Under the circumstances, we call upon you to pay of Rs. 14,75,000/- within a period of 15 \n(fifteen) days from the date of receipt of this notice, failing which our client will be constrained",
+          "similarity": 0.6525
+        },
+        {
+          "source_id": "E3",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "u have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you have issued purchase order dated 04/04/2019 amounting to rupees \n14,75,000/- for 25 (twenty-five) Dell Inspiron laptops. \n3. That you have promised our client to pay the cost of the product in the form of Current Dated \nCheque as mentioned in the purchase order. \n4. That our client had relied on your promise and as instructed by you delivered the said laptops at \nyour office at No. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad vide Invoice No. \nTNC/2019-20/0231 dated 10/04/2019. \n5. That you have issued Cheque No. 456789 dated 10/06/2019 for Rs. 14,75,000/- (Rupees Fourteen \nLakh Seventy-Five Thousand only) drawn on HDFC Bank, Vidyanagar Branch, Dharwad \ntowards payment against the Invoice. \n6. That the aforesaid cheques No. 456789 dated 10/06/2019 for Rs. 14,75,000/- was presented by \nour client M/s. TechNova Computers Pvt. Ltd. on 12/06/2019 to your bankers i.e. HDFC Bank, \nVidyanagar Branch,",
+          "similarity": 0.6056
+        },
+        {
+          "source_id": "E4",
+          "filename": "legal document.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "to take legal action against you in a court of law for an offence punishable under section 138 of \nNegotiable Instruments Act for which you will be liable for all costs and consequences. \n12. This is without prejudice to all other legal rights and remedies available to our client for the \nabove-stated purpose. \n13. You are liable to pay a sum of Rs. 5,500/- as necessary cost and expenses of sending the present \nlegal notice to you. \n14. Copy of this legal notice is also kept at my office for further ready reference it required in future. \n \nYours faithfully, \nAdv. Prakash R. Deshpande \n(Advocate)",
+          "similarity": 0.5888
+        },
+        {
+          "source_id": "E5",
+          "filename": "legal document.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "LEGAL NOTICE \n \nTo,                                                                                                                               Date: 12/07/2019 \nM/s. Sharma Office Solutions Pvt. Ltd., through its Director Mr. Anil Sharma \nNo. 214, 2nd Floor, Lakeview Complex, Vidyanagar, Dharwad, Karnataka - 580004 \nMobile: +91 98450 12345 | E-mail: accounts@sharmaoffice.example.com \n \nSub: Legal notice under section 138 of Negotiable Instrument Act for dishonour of cheque. \n \nDear Sir/Madam, \n \nUnder instructions and authority from my client M/s. TechNova Computers Pvt. Ltd. we serve upon you \nthe following legal notice. \n1. That my client is a Private Limited Company engaged in trading of computers, laptops, computer \nparts and accessories the name of TechNova Computers Pvt. Ltd. having office at Plot No. 18, \nGokul Road Industrial Estate, Hubballi, Karnataka - 580030. \n2. That in the year 2019 you have approached my client through E-mail communication of your \nemployee Mr. Rakesh Kulkarni to purchase 25 (twenty-five) Dell Inspiron laptops for your \noffice. Subsequently you",
+          "similarity": 0.558
+        }
+      ],
+      "top_similarity": 0.6814,
+      "abstained": true,
+      "message": "The document is silent on this in the passages I could retrieve, so I will not invent an answer. This does not prove the full document has no relevant clause: retrieval or PDF text extraction may have missed it. Check the cited sections or try a more specific search.",
+      "reason": "no_validated_quote_evidence",
+      "legal_boundary": false
+    }
+  },
+  {
+    "role": "user",
+    "content": "What is the purpose of this Assignment?"
+  },
+  {
+    "role": "assistant",
+    "question": "What is the purpose of this Assignment?",
+    "mode": "question",
+    "result": {
+      "findings": [
+        {
+          "category": "explicit_statement",
+          "claim": "The purpose of the assignment is for the Assignor (the current owner) to sell, transfer, convey, and assign their rights, title, and interest in Flat No. 605 to the Assignee (the purchaser).",
+          "evidence": [
+            {
+              "source_id": "E8",
+              "quote": "That the Vendor hereby agrees to sell, transfer, convey and assign his right , title and interest in the said to Flat bearing No. 605.",
+              "source": {
+                "source_id": "E8",
+                "filename": "Deed.pdf",
+                "page_number": 2,
+                "all_pages": [
+                  2
+                ],
+                "text": "Moshi/20/2020 dated 06.07.2020 and also part Compleation \nCertificate of Building A bearing No 02/2021 date 05.01.2021 authencated copy of the said \ncertificate is attached to this deed at Annexure-A \n \nAND WHEREAS M/S  SHYAMA BUILDERS has registered the project under the provision of the \nReal Estate (Regulations & Development )Act , 2016 with the Real Estate Regulatory Authority \nBearing Certificate no . P52100009872. \n \nAND WHEREAS  the parties agreed to reduce the terms agreed to by and between them int \nwriting . The Purchasers have agreed to purchase and acquire from the said Flat along with \nright, title and interest therein , free from all encumbrances and reasonable doubts which the \nvendor has agreed to do upon the terms and condition recorded hereinafter; \n \nNOW THIS AGREEMENT WITHNESSETH and it is hereby agreed by and between the parties \nhere to as follows:- \n \nThat the Vendor hereby agrees to sell, transfer, convey and assign his right , title and interest in \nthe said to Flat bearing No. 605. SIXTH Floor, admeasuring carpet area about 28.71 Sq Mtrs. \nCarpet with",
+                "similarity": 0.5317
+              }
+            }
+          ],
+          "lawyer_question": "",
+          "topic": "money",
+          "attention": "low",
+          "support": [
+            "quote_valid",
+            "numbers_verified",
+            "verifier_agrees"
+          ]
+        },
+        {
+          "category": "explicit_statement",
+          "claim": "The assignment involves the transfer of the flat, which is located in the project known as 'SHYAMA FORTUNE' in Pune.",
+          "evidence": [
+            {
+              "source_id": "E7",
+              "quote": "project known as “SHYAMA FORTUNE” Situated at village Moshi , Tal:Haveli, Dist -Pune",
+              "source": {
+                "source_id": "E7",
+                "filename": "Deed.pdf",
+                "page_number": 2,
+                "all_pages": [
+                  2
+                ],
+                "text": "project known as “SHYAMA FORTUNE” Situated at village Moshi , Tal:Haveli, Dist -Pune, within \nthe local limits of Pimpri Chinchwad Muncipal Corporation and within the Jurisdiction of Sub \nRegister Haveli , Pune . This is more particularly described in Schedule B  written underhere . \nThe said flat is the self acquired property of the present Assignor. \n \nAND WHEREAS the Mr. Ramkrishna Mukunda Bhamare And Mrs. Rajani Ramkrishna Bhamare \nwas is need a flat and on coming to know about the above said facts approached the i.e \nSHYAMA BUILDERS  thereby offered to purchase the said flat and the said owner had agreed to \nsell the said flat to them which was purchased vide Agreement Registration in the office of the \nSub Register no 18 Date 17/02/2023 which is registered at Registration Sr No 3438/2023. \n \nAND WHEREAS Mr.Ramkrishna Mukunda Bhamare and Mrs. Rajani Ramkrishna Bhamare Flat \nNo 605 and the Assignee i.e Mr. Ganesh Ramchandra Dhangar and Mrs. Dipika Ganesh Dhangar \nwas in search of likewise residential accommodation approached Mr. Ramkrishna Mukunda \nBhamare and Mrs. Rajani",
+                "similarity": 0.5366
+              }
+            }
+          ],
+          "lawyer_question": "",
+          "topic": "general",
+          "attention": "low",
+          "support": [
+            "quote_valid",
+            "numbers_verified",
+            "verifier_agrees"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "E1",
+          "filename": "Deed.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "DEED OF ASSIGNMENT \n   This DEED OF ASSIGNMENT MADE AT PUNE, on the 17th Day of July, Two Thousand and \nTwenty Five (2025) \n                                                                    BETWEEN \n1 . MR. RAMKRISHNA MUKUNDA BHAMARE \nAge 59 years, Occupation- Service \nPAN NO -ADZPB3451G \nADHAR NO – 9486 9343 6786 \nResiding At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 \n \n2 . MRS. RAJANI RAMKRISHNA BHAMARE \nAge 54 years, Occupation -Homemaker \nPAN NO – FKEPB1070E \nADHAR NO – 9035 0628 0714 \nResiding At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 \n  \nHereinafter called as the “ASSIGNOR/VENDOR”    which expression unless repugnant to the \ncontext shall deem to mean and include his legal heirs executers administrators and Assignees. \n                                                                       ………….THE PARTY OF THE FIRST PART \n                                                                        AND \n1 . MR. GANESH RAJENDRA DHANGAR \nAge 32 years , Occupation -Service \nPAN NO-BSNPD5449N \nADHAR NO-6051 3602 1010 \nResiding At -Shivaji",
+          "similarity": 0.6228
+        },
+        {
+          "source_id": "E2",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "he place of the Vendor . Assignee has undertaken the responsibility of making payment of \nthe society  transfer fee’s till the date of Assignment Deed. \n \n3        The Vendor shall bear and pay all outgoings in respect of the said flat including all rates, \ntaxes and charges for compsumption of electricity , water etc. and all the dues and charges \npayable to the said builder  till the date of Completion of Sale and the Purchaser shall bear and \npay such all outgoing charges and dues to the said Builder / Society from the date of \ncompletion of sale and receving possession of the said Flat.",
+          "similarity": 0.6402
+        },
+        {
+          "source_id": "E3",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "that the vondor has nither recived any notice from the said Builder for or in \nrelation to any breach of any of the terms  nor are there any actions or proceeding pending \nagainst the Vendor instituted by the said Builder in respect of the said Flat; \n \ni   That the Vendor has not recived any Notice for acquisition or requisition of the said Flat; \n \nj    The Assignor has delivered the ASSIGNEE the documents relating to the title pertaining to \nthe said Flat. The Purchasers shall be entitled to become the members of the proposed society \nwhich shall be formed by the Flat Purchasers in the said building the Society in place of the \nVendor. \n \nk    The Purchasers shall be entitled to become members of the society which shall be formed \nby the Flat Purchasers in the said building  SHYAMA FORTUNE  B Wing Co-Operative Housing \nSociety Ltd registered with Serial No …………………………………………………………………….. dated ………. \nIn the place of the Vendor . Assignee has undertaken the responsibility of making payment of \nthe society  transfer fee’s till the date of Assignment Deed. \n \n3        The Vendor shall",
+          "similarity": 0.5883
+        },
+        {
+          "source_id": "E4",
+          "filename": "Deed.pdf",
+          "page_number": 6,
+          "all_pages": [
+            6
+          ],
+          "text": "SCHEDULE OF THE PROPERTY B \n \nFlat bearing no 605, Sixth Floor, admeasuring carpet area about 28.71 Sq Mtrs. Carpet with \nenclosed balcony 8.73 Sq Mtrs. Carpet with Terrace area about 3.66 Sq Mtr. AND Terrace area \n2.88 . In the Society known as”SHYAMA FORTUNE B Wing in the project known as “SHYAMA \nFORTUNE “( More particular describe in Schedule of property A) \n \n              IN WITNESS WHEREOF  the parties hereto have put their respective hands to this \nAssignment Deed on the day and date first mentioned hereinabove. \n \n SIGNED AND DELIVERED by the  \n       Within named  Assignors \n         THUMB                   PHOTO \n \n \n \n           1.MR. RAMKRISHNA \n           MUKUNDA BHAMARE \n \n \n \n \n \n  \n           \n \n \n         2. MRS . RAJANI RAMKRISHNA \n                               BHAMARE              \n \n \n \n \n  \n  SIGNED AND DELIVERED by the  \n    Within Named PURCHASERS \n         THUMB                  PHOTO \n \n \n1. MR. GANESH RAJENDRA  \n                  DHANGAR \n \n \n \n \n \n \n  \n         \n \n \n2. MRS. DIPIKA GANESH \n                 DHANGAR",
+          "similarity": 0.5536
+        },
+        {
+          "source_id": "E5",
+          "filename": "Deed.pdf",
+          "page_number": 5,
+          "all_pages": [
+            5
+          ],
+          "text": "nd \nfor implementing terms of this Agreement. \n \n7        The Vendor has represented and assured to the Purchasers that his title to the said flat is \nfree from all ecumbrances and claims of whatsoever nature. In the event it is found that \nVendors title to the said flat is defective or any claim is made on the said flat or Purchasers have \nsuffered any loss or damages by the statements, decelaration whether directly or indirectly is \nmade on the said Flat Vendor agree to indemnify the Purchasers and hereby indemnifies the \nPurchasers /their nominies /their successors in the title on account of above and the vendor \nshall reimburse the Purchasers and /or their nominies and/or successors in the title for the \nsame on their making demand to that effect. \n8        The stamp duty and the registration charges shall be born and paid by the purchasers only \n. \n \nAlong with the common facilities and common use of staircases, water , connection, common \nparking and common drainage line & W. C as per rules   \n \n                                                   SCHEDULE OF THE PROPERTY A",
+          "similarity": 0.5397
+        },
+        {
+          "source_id": "E6",
+          "filename": "Deed.pdf",
+          "page_number": 3,
+          "all_pages": [
+            3
+          ],
+          "text": "ities upto the dates hereof \nand shall pay all the dues till the completion of sale. \n \nb    The present M.S.E.B meter (Consumer no 170064590751) stands in the name of the present \nAssignor and he hereby undertakes to transfer the M.S.E.B in the favour of present \nAssignee.The M.S.E.B charges till date of the possession of the assignor will be paid by the \nassignor . However, after the date of possession assignee shall pay the same . As well as M.S.E.B \nmeter transfer charges will be done by the assignee. \n \nc  That the Vendor is the sole and Absolute owner and beneficiary of the said flat duly standing \nin the name of the vendor in the books and all other records of the builder and is absolutely \nentitled to the same and to all incidental rights there to and two exclusive rights to the use , \nenjoyment and occupation of the said flat and except the Vendor no other person or persons \nhave any right , title , intrest, claim, or deemed of any nature whatsoever unto or upon the said \npremises; \n \nd   That notwithstanding any act, deed, matter or thing whatsoever done, omitted, by the",
+          "similarity": 0.5739
+        },
+        {
+          "source_id": "E7",
+          "filename": "Deed.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "project known as “SHYAMA FORTUNE” Situated at village Moshi , Tal:Haveli, Dist -Pune, within \nthe local limits of Pimpri Chinchwad Muncipal Corporation and within the Jurisdiction of Sub \nRegister Haveli , Pune . This is more particularly described in Schedule B  written underhere . \nThe said flat is the self acquired property of the present Assignor. \n \nAND WHEREAS the Mr. Ramkrishna Mukunda Bhamare And Mrs. Rajani Ramkrishna Bhamare \nwas is need a flat and on coming to know about the above said facts approached the i.e \nSHYAMA BUILDERS  thereby offered to purchase the said flat and the said owner had agreed to \nsell the said flat to them which was purchased vide Agreement Registration in the office of the \nSub Register no 18 Date 17/02/2023 which is registered at Registration Sr No 3438/2023. \n \nAND WHEREAS Mr.Ramkrishna Mukunda Bhamare and Mrs. Rajani Ramkrishna Bhamare Flat \nNo 605 and the Assignee i.e Mr. Ganesh Ramchandra Dhangar and Mrs. Dipika Ganesh Dhangar \nwas in search of likewise residential accommodation approached Mr. Ramkrishna Mukunda \nBhamare and Mrs. Rajani",
+          "similarity": 0.5366
+        },
+        {
+          "source_id": "E8",
+          "filename": "Deed.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "Moshi/20/2020 dated 06.07.2020 and also part Compleation \nCertificate of Building A bearing No 02/2021 date 05.01.2021 authencated copy of the said \ncertificate is attached to this deed at Annexure-A \n \nAND WHEREAS M/S  SHYAMA BUILDERS has registered the project under the provision of the \nReal Estate (Regulations & Development )Act , 2016 with the Real Estate Regulatory Authority \nBearing Certificate no . P52100009872. \n \nAND WHEREAS  the parties agreed to reduce the terms agreed to by and between them int \nwriting . The Purchasers have agreed to purchase and acquire from the said Flat along with \nright, title and interest therein , free from all encumbrances and reasonable doubts which the \nvendor has agreed to do upon the terms and condition recorded hereinafter; \n \nNOW THIS AGREEMENT WITHNESSETH and it is hereby agreed by and between the parties \nhere to as follows:- \n \nThat the Vendor hereby agrees to sell, transfer, convey and assign his right , title and interest in \nthe said to Flat bearing No. 605. SIXTH Floor, admeasuring carpet area about 28.71 Sq Mtrs. \nCarpet with",
+          "similarity": 0.5317
+        },
+        {
+          "source_id": "E9",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "e   That neither the Vendor nor anyone on her behalf has committed or omitted any act, deed, \nmatter or thing whereby her holding of the Flat and incidental rights thereto including the right \nto peaceful use, occupation , ownership, and enjoyment of the said flats and other rights and \nbenefits in respect thereof may become or may be prejudicially affected or ecumbered in any \nmanner or whereby the said flat on her other rights , title and interest therein may become \nliable to attachment and/or sale whether by a decree or order of the Competent Court or \notherwise; \n \nf   That the Vendor has not created or purported to create any tenency, license, charge, lease, \nmortgage, lien or any kind of third party rights over the said Flat and no other person or party \nhave any right, title or interest, claim or demand in to or upon the same either by way of \nmortage, gift, trust, inheritance, lease or otherwise and that the same are free from all \necunbrances and there is no pending litigation of any kind whatsoever and further that the \nVendor shall so long as this agreement is valid, not",
+          "similarity": 0.527
+        },
+        {
+          "source_id": "E10",
+          "filename": "Deed.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "nee i.e Mr. Ganesh Ramchandra Dhangar and Mrs. Dipika Ganesh Dhangar \nwas in search of likewise residential accommodation approached Mr. Ramkrishna Mukunda \nBhamare and Mrs. Rajani Ramkrishna Bhamare (Assignor) and after due neogations they agreed \nto transfer all his rights in the respectof said property i.e Flat No 605 to Mr. Ganesh Rajendra \nDhangar and Mrs. Dipika Ganesh Dhangar consideration of Rs 39,00,000/- (Rupees Thirty Nine \nLacks only) \n \nAND WHEREAS M/S SHYAMA BUILDERS in the Pimpri Chinchwad Muncipal Corporation has \nsanctioned the layout and the building plan of the proposed to be constructed on the said land \nvide Commencement Certificate bearing no BP/Moshi/76/2016 dated 18.08.2016 and building \nplan vide Commencement Certificate no BP/Moshi/54/2018 dated 19.10.2018 and also revised \nCommencement Certificate No BP/Moshi/2019 dated 06.03.2019 and also revised \nCommencement Certificate No BP/Moshi/20/2020 dated 06.07.2020 and also part Compleation \nCertificate of Building A bearing No 02/2021 date 05.01.2021 authencated copy of the said \ncertificate is attached to this",
+          "similarity": 0.5285
+        },
+        {
+          "source_id": "E11",
+          "filename": "Deed.pdf",
+          "page_number": 5,
+          "all_pages": [
+            5
+          ],
+          "text": "4       The Vendor shall sign and execute all necessary documents , applications and other \nassurences and may be necessary or as may be determined or required by the said builder and \nconcerned Government authorities for transfer of flat and records thereof in the name of the \nPurchasers. \n \n5       The Purcharers both hereby agree and convenant to become member of such Society or \nApartment and to abide by and observe and perform all the rules and regulations and bye-laws \nof the said Society or Apartment from time in force. \n \n6         The Vendor shall hereinafter as and when required by the Purchasers at the cost of the \nPurchasers sign and execute in the fovour of the Purchasers all such further and other \ndocuments as may be required for effective and complete transfer of the said flat  in the favour \nof the Purchasers in the record of the Builder and the Society that may be formed in future and \nfor implementing terms of this Agreement. \n \n7        The Vendor has represented and assured to the Purchasers that his title to the said flat is \nfree from all ecumbrances and",
+          "similarity": 0.5122
+        },
+        {
+          "source_id": "E12",
+          "filename": "Deed.pdf",
+          "page_number": 3,
+          "all_pages": [
+            3
+          ],
+          "text": "reasonable doubts for the total consideration of Rs. 39,00,000/-(Rupees Thirty Nine Lacks \nOnly) \n \n1-To be paid in the following manner:-- \nSr. No           Amount                        Particulars \n       1       50000 Paid by Assignee to Assignor by, \nIMPS NO.514715617366, \nBank-ICICI , Branch Chinchwad, \nBearing Date :- \n       2        1,50,000 Paid by Assignee to Assignor by, \nIMPS NO.516218963123, \nBank-ICICI, Branch Chinchwad, \n   \n   \n   \n   \n \n   So, today the ASSIGNEE paid the total consideration to the Assignor & Assignor acknowledge \n& admits the same . \n \n2 . The Vendor Both hereby covenant with the Purchasers as follows:-- \n \na     That the Vendor has duly paid and discharged in full all the dues and liabilities in respect of \nthe said flat including the Muncipal Outgoings , taxes , rates, Maintanance charges, Electricity \nCharges etc, payable to the Builder/Society and concerned Authorities upto the dates hereof \nand shall pay all the dues till the completion of sale. \n \nb    The present M.S.E.B meter (Consumer no 170064590751) stands in the name of the present",
+          "similarity": 0.5562
+        }
+      ],
+      "top_similarity": 0.9575,
+      "abstained": false,
+      "legal_boundary": false,
+      "message": "Findings below are limited to claims that passed source-ID and verbatim-quote checks. Review the quote before relying on an interpretation.",
+      "reason": "validated_findings"
+    }
+  },
+  {
+    "role": "user",
+    "content": "Name of seller and buyer"
+  },
+  {
+    "role": "assistant",
+    "question": "Name of seller and buyer",
+    "mode": "question",
+    "result": {
+      "findings": [
+        {
+          "category": "explicit_statement",
+          "claim": "The buyers, referred to as the Assignee/Purchaser, are Mr. Ganesh Rajendra Dhangar and Mrs. Dipika Ganesh Dhangar.",
+          "evidence": [
+            {
+              "source_id": "E4",
+              "quote": "1 . MR. GANESH RAJENDRA DHANGAR Age 32 years , Occupation -Service PAN NO-BSNPD5449N ADHAR NO-6051 3602 1010 Residing At -Shivaji Nagar Ranipura Dondaicha Dhule 425408 2 . MRS. DIPIKA GANESH DHANGAR Age 32 years , Occupation- Homemaker PAN NO-KAHPD4138M ADHAR NO-7938 1345 2226 Residing At -Shivaji Nagar Ranipura Dondaicha Dhule 425408 Hereinafter called as the “ASSIGNEE/PURCHASER”",
+              "source": {
+                "source_id": "E4",
+                "filename": "Deed.pdf",
+                "page_number": 1,
+                "all_pages": [
+                  1
+                ],
+                "text": "AND \n1 . MR. GANESH RAJENDRA DHANGAR \nAge 32 years , Occupation -Service \nPAN NO-BSNPD5449N \nADHAR NO-6051 3602 1010 \nResiding At -Shivaji Nagar Ranipura Dondaicha Dhule 425408 \n \n2 . MRS. DIPIKA GANESH DHANGAR \nAge 32 years , Occupation- Homemaker \nPAN NO-KAHPD4138M \nADHAR NO-7938 1345 2226 \nResiding At -Shivaji Nagar Ranipura Dondaicha Dhule 425408 \n \nHereinafter called as the “ASSIGNEE/PURCHASER”    which expression unless repugnant to the \ncontext shall deem to mean and include his legal heirs executers administrators and Assignees. \n                                                                                   ………..THE PARTY OF THE SECOND PART \nWHEREAS the Vendor is fully seized off and or sufficiently entitled to Flat bearing No .605, \nSIXTH FLOOR, admeasuring carpet area about 28.71 Sq Mtrs. Carpet with enclosed balcony \n8.73 Sq Mtrs .Carpet area with terrace area about 3.66 Sq Mtrs and also 2.88 Sq Mtrs In the",
+                "similarity": 0.6412
+              }
+            }
+          ],
+          "lawyer_question": "",
+          "topic": "money",
+          "attention": "high",
+          "support": [
+            "quote_valid",
+            "numbers_verified",
+            "verifier_agrees"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "E1",
+          "filename": "Deed.pdf",
+          "page_number": 3,
+          "all_pages": [
+            3
+          ],
+          "text": "ities upto the dates hereof \nand shall pay all the dues till the completion of sale. \n \nb    The present M.S.E.B meter (Consumer no 170064590751) stands in the name of the present \nAssignor and he hereby undertakes to transfer the M.S.E.B in the favour of present \nAssignee.The M.S.E.B charges till date of the possession of the assignor will be paid by the \nassignor . However, after the date of possession assignee shall pay the same . As well as M.S.E.B \nmeter transfer charges will be done by the assignee. \n \nc  That the Vendor is the sole and Absolute owner and beneficiary of the said flat duly standing \nin the name of the vendor in the books and all other records of the builder and is absolutely \nentitled to the same and to all incidental rights there to and two exclusive rights to the use , \nenjoyment and occupation of the said flat and except the Vendor no other person or persons \nhave any right , title , intrest, claim, or deemed of any nature whatsoever unto or upon the said \npremises; \n \nd   That notwithstanding any act, deed, matter or thing whatsoever done, omitted, by the",
+          "similarity": 0.6494
+        },
+        {
+          "source_id": "E2",
+          "filename": "Deed.pdf",
+          "page_number": 5,
+          "all_pages": [
+            5
+          ],
+          "text": "4       The Vendor shall sign and execute all necessary documents , applications and other \nassurences and may be necessary or as may be determined or required by the said builder and \nconcerned Government authorities for transfer of flat and records thereof in the name of the \nPurchasers. \n \n5       The Purcharers both hereby agree and convenant to become member of such Society or \nApartment and to abide by and observe and perform all the rules and regulations and bye-laws \nof the said Society or Apartment from time in force. \n \n6         The Vendor shall hereinafter as and when required by the Purchasers at the cost of the \nPurchasers sign and execute in the fovour of the Purchasers all such further and other \ndocuments as may be required for effective and complete transfer of the said flat  in the favour \nof the Purchasers in the record of the Builder and the Society that may be formed in future and \nfor implementing terms of this Agreement. \n \n7        The Vendor has represented and assured to the Purchasers that his title to the said flat is \nfree from all ecumbrances and",
+          "similarity": 0.6462
+        },
+        {
+          "source_id": "E3",
+          "filename": "Deed.pdf",
+          "page_number": 5,
+          "all_pages": [
+            5
+          ],
+          "text": "nd \nfor implementing terms of this Agreement. \n \n7        The Vendor has represented and assured to the Purchasers that his title to the said flat is \nfree from all ecumbrances and claims of whatsoever nature. In the event it is found that \nVendors title to the said flat is defective or any claim is made on the said flat or Purchasers have \nsuffered any loss or damages by the statements, decelaration whether directly or indirectly is \nmade on the said Flat Vendor agree to indemnify the Purchasers and hereby indemnifies the \nPurchasers /their nominies /their successors in the title on account of above and the vendor \nshall reimburse the Purchasers and /or their nominies and/or successors in the title for the \nsame on their making demand to that effect. \n8        The stamp duty and the registration charges shall be born and paid by the purchasers only \n. \n \nAlong with the common facilities and common use of staircases, water , connection, common \nparking and common drainage line & W. C as per rules   \n \n                                                   SCHEDULE OF THE PROPERTY A",
+          "similarity": 0.6427
+        },
+        {
+          "source_id": "E4",
+          "filename": "Deed.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "AND \n1 . MR. GANESH RAJENDRA DHANGAR \nAge 32 years , Occupation -Service \nPAN NO-BSNPD5449N \nADHAR NO-6051 3602 1010 \nResiding At -Shivaji Nagar Ranipura Dondaicha Dhule 425408 \n \n2 . MRS. DIPIKA GANESH DHANGAR \nAge 32 years , Occupation- Homemaker \nPAN NO-KAHPD4138M \nADHAR NO-7938 1345 2226 \nResiding At -Shivaji Nagar Ranipura Dondaicha Dhule 425408 \n \nHereinafter called as the “ASSIGNEE/PURCHASER”    which expression unless repugnant to the \ncontext shall deem to mean and include his legal heirs executers administrators and Assignees. \n                                                                                   ………..THE PARTY OF THE SECOND PART \nWHEREAS the Vendor is fully seized off and or sufficiently entitled to Flat bearing No .605, \nSIXTH FLOOR, admeasuring carpet area about 28.71 Sq Mtrs. Carpet with enclosed balcony \n8.73 Sq Mtrs .Carpet area with terrace area about 3.66 Sq Mtrs and also 2.88 Sq Mtrs In the",
+          "similarity": 0.6412
+        },
+        {
+          "source_id": "E5",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "he place of the Vendor . Assignee has undertaken the responsibility of making payment of \nthe society  transfer fee’s till the date of Assignment Deed. \n \n3        The Vendor shall bear and pay all outgoings in respect of the said flat including all rates, \ntaxes and charges for compsumption of electricity , water etc. and all the dues and charges \npayable to the said builder  till the date of Completion of Sale and the Purchaser shall bear and \npay such all outgoing charges and dues to the said Builder / Society from the date of \ncompletion of sale and receving possession of the said Flat.",
+          "similarity": 0.6317
+        },
+        {
+          "source_id": "E6",
+          "filename": "Deed.pdf",
+          "page_number": 3,
+          "all_pages": [
+            3
+          ],
+          "text": "e , intrest, claim, or deemed of any nature whatsoever unto or upon the said \npremises; \n \nd   That notwithstanding any act, deed, matter or thing whatsoever done, omitted, by the \nVendor or any person or persons lawfully and equitably claiming by, from , though, or in trust \nfor the Vendor , the Vendor has full power and absolute authority in her own right to transfer \nthe said flat and to relinquish and transfer all her rights, title and interest therein in favour of \nthe Purchasers.",
+          "similarity": 0.633
+        },
+        {
+          "source_id": "E7",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "that the vondor has nither recived any notice from the said Builder for or in \nrelation to any breach of any of the terms  nor are there any actions or proceeding pending \nagainst the Vendor instituted by the said Builder in respect of the said Flat; \n \ni   That the Vendor has not recived any Notice for acquisition or requisition of the said Flat; \n \nj    The Assignor has delivered the ASSIGNEE the documents relating to the title pertaining to \nthe said Flat. The Purchasers shall be entitled to become the members of the proposed society \nwhich shall be formed by the Flat Purchasers in the said building the Society in place of the \nVendor. \n \nk    The Purchasers shall be entitled to become members of the society which shall be formed \nby the Flat Purchasers in the said building  SHYAMA FORTUNE  B Wing Co-Operative Housing \nSociety Ltd registered with Serial No …………………………………………………………………….. dated ………. \nIn the place of the Vendor . Assignee has undertaken the responsibility of making payment of \nthe society  transfer fee’s till the date of Assignment Deed. \n \n3        The Vendor shall",
+          "similarity": 0.6332
+        },
+        {
+          "source_id": "E8",
+          "filename": "Deed.pdf",
+          "page_number": 3,
+          "all_pages": [
+            3
+          ],
+          "text": "reasonable doubts for the total consideration of Rs. 39,00,000/-(Rupees Thirty Nine Lacks \nOnly) \n \n1-To be paid in the following manner:-- \nSr. No           Amount                        Particulars \n       1       50000 Paid by Assignee to Assignor by, \nIMPS NO.514715617366, \nBank-ICICI , Branch Chinchwad, \nBearing Date :- \n       2        1,50,000 Paid by Assignee to Assignor by, \nIMPS NO.516218963123, \nBank-ICICI, Branch Chinchwad, \n   \n   \n   \n   \n \n   So, today the ASSIGNEE paid the total consideration to the Assignor & Assignor acknowledge \n& admits the same . \n \n2 . The Vendor Both hereby covenant with the Purchasers as follows:-- \n \na     That the Vendor has duly paid and discharged in full all the dues and liabilities in respect of \nthe said flat including the Muncipal Outgoings , taxes , rates, Maintanance charges, Electricity \nCharges etc, payable to the Builder/Society and concerned Authorities upto the dates hereof \nand shall pay all the dues till the completion of sale. \n \nb    The present M.S.E.B meter (Consumer no 170064590751) stands in the name of the present",
+          "similarity": 0.5799
+        },
+        {
+          "source_id": "E9",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "nd that the same are free from all \necunbrances and there is no pending litigation of any kind whatsoever and further that the \nVendor shall so long as this agreement is valid, not enter into any agreement/writing with any \nthird party for creating any rights of whatsoever nature in respect of the said flat; \n \ng   That the Purchaser shall on the Completion of the transfer peacefullyand quietly be entitled \nto hold and own the said flat and all incidental thereto including the right to enter upon and \nremain in sole occupation and enjoyment of the said flat and/or any part thereof in the \nPurchasers own right without any interference disturbance , interruption, claim or demand \nwhatsoever and/or any person or persons lawfully and equitably claming by from , through \nunder or in trust for the Vendor; \n \nh  That the vendor has duly complied with observed performed with all the condition of the \nAgreement and that the vondor has nither recived any notice from the said Builder for or in \nrelation to any breach of any of the terms  nor are there any actions or proceeding pending \nagainst",
+          "similarity": 0.6139
+        },
+        {
+          "source_id": "E10",
+          "filename": "Deed.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "Moshi/20/2020 dated 06.07.2020 and also part Compleation \nCertificate of Building A bearing No 02/2021 date 05.01.2021 authencated copy of the said \ncertificate is attached to this deed at Annexure-A \n \nAND WHEREAS M/S  SHYAMA BUILDERS has registered the project under the provision of the \nReal Estate (Regulations & Development )Act , 2016 with the Real Estate Regulatory Authority \nBearing Certificate no . P52100009872. \n \nAND WHEREAS  the parties agreed to reduce the terms agreed to by and between them int \nwriting . The Purchasers have agreed to purchase and acquire from the said Flat along with \nright, title and interest therein , free from all encumbrances and reasonable doubts which the \nvendor has agreed to do upon the terms and condition recorded hereinafter; \n \nNOW THIS AGREEMENT WITHNESSETH and it is hereby agreed by and between the parties \nhere to as follows:- \n \nThat the Vendor hereby agrees to sell, transfer, convey and assign his right , title and interest in \nthe said to Flat bearing No. 605. SIXTH Floor, admeasuring carpet area about 28.71 Sq Mtrs. \nCarpet with",
+          "similarity": 0.6132
+        },
+        {
+          "source_id": "E11",
+          "filename": "Deed.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "DEED OF ASSIGNMENT \n   This DEED OF ASSIGNMENT MADE AT PUNE, on the 17th Day of July, Two Thousand and \nTwenty Five (2025) \n                                                                    BETWEEN \n1 . MR. RAMKRISHNA MUKUNDA BHAMARE \nAge 59 years, Occupation- Service \nPAN NO -ADZPB3451G \nADHAR NO – 9486 9343 6786 \nResiding At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 \n \n2 . MRS. RAJANI RAMKRISHNA BHAMARE \nAge 54 years, Occupation -Homemaker \nPAN NO – FKEPB1070E \nADHAR NO – 9035 0628 0714 \nResiding At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 \n  \nHereinafter called as the “ASSIGNOR/VENDOR”    which expression unless repugnant to the \ncontext shall deem to mean and include his legal heirs executers administrators and Assignees. \n                                                                       ………….THE PARTY OF THE FIRST PART \n                                                                        AND \n1 . MR. GANESH RAJENDRA DHANGAR \nAge 32 years , Occupation -Service \nPAN NO-BSNPD5449N \nADHAR NO-6051 3602 1010 \nResiding At -Shivaji",
+          "similarity": 0.6045
+        },
+        {
+          "source_id": "E12",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "e   That neither the Vendor nor anyone on her behalf has committed or omitted any act, deed, \nmatter or thing whereby her holding of the Flat and incidental rights thereto including the right \nto peaceful use, occupation , ownership, and enjoyment of the said flats and other rights and \nbenefits in respect thereof may become or may be prejudicially affected or ecumbered in any \nmanner or whereby the said flat on her other rights , title and interest therein may become \nliable to attachment and/or sale whether by a decree or order of the Competent Court or \notherwise; \n \nf   That the Vendor has not created or purported to create any tenency, license, charge, lease, \nmortgage, lien or any kind of third party rights over the said Flat and no other person or party \nhave any right, title or interest, claim or demand in to or upon the same either by way of \nmortage, gift, trust, inheritance, lease or otherwise and that the same are free from all \necunbrances and there is no pending litigation of any kind whatsoever and further that the \nVendor shall so long as this agreement is valid, not",
+          "similarity": 0.5913
+        }
+      ],
+      "top_similarity": 1.0,
+      "abstained": false,
+      "legal_boundary": false,
+      "message": "Findings below are limited to claims that passed source-ID and verbatim-quote checks. Review the quote before relying on an interpretation.",
+      "reason": "validated_findings"
+    }
+  },
+  {
+    "role": "user",
+    "content": "Seller name?"
+  },
+  {
+    "role": "assistant",
+    "question": "Seller name?",
+    "mode": "question",
+    "result": {
+      "findings": [
+        {
+          "category": "explicit_statement",
+          "claim": "The document identifies the seller, referred to as the Assignor/Vendor, as Mr. Ramkrishna Mukunda Bhamare and Mrs. Rajani Ramkrishna Bhamare.",
+          "evidence": [
+            {
+              "source_id": "E11",
+              "quote": "1 . MR. RAMKRISHNA MUKUNDA BHAMARE Age 59 years, Occupation- Service PAN NO -ADZPB3451G ADHAR NO – 9486 9343 6786 Residing At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 2 . MRS. RAJANI RAMKRISHNA BHAMARE Age 54 years, Occupation -Homemaker PAN NO – FKEPB1070E ADHAR NO – 9035 0628 0714 Residing At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 Hereinafter called as the “ASSIGNOR/VENDOR”",
+              "source": {
+                "source_id": "E11",
+                "filename": "Deed.pdf",
+                "page_number": 1,
+                "all_pages": [
+                  1
+                ],
+                "text": "DEED OF ASSIGNMENT \n   This DEED OF ASSIGNMENT MADE AT PUNE, on the 17th Day of July, Two Thousand and \nTwenty Five (2025) \n                                                                    BETWEEN \n1 . MR. RAMKRISHNA MUKUNDA BHAMARE \nAge 59 years, Occupation- Service \nPAN NO -ADZPB3451G \nADHAR NO – 9486 9343 6786 \nResiding At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 \n \n2 . MRS. RAJANI RAMKRISHNA BHAMARE \nAge 54 years, Occupation -Homemaker \nPAN NO – FKEPB1070E \nADHAR NO – 9035 0628 0714 \nResiding At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 \n  \nHereinafter called as the “ASSIGNOR/VENDOR”    which expression unless repugnant to the \ncontext shall deem to mean and include his legal heirs executers administrators and Assignees. \n                                                                       ………….THE PARTY OF THE FIRST PART \n                                                                        AND \n1 . MR. GANESH RAJENDRA DHANGAR \nAge 32 years , Occupation -Service \nPAN NO-BSNPD5449N \nADHAR NO-6051 3602 1010 \nResiding At -Shivaji",
+                "similarity": 0.5689
+              }
+            }
+          ],
+          "lawyer_question": "",
+          "topic": "money",
+          "attention": "high",
+          "support": [
+            "quote_valid",
+            "numbers_verified",
+            "verifier_agrees"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "E1",
+          "filename": "Deed.pdf",
+          "page_number": 3,
+          "all_pages": [
+            3
+          ],
+          "text": "ities upto the dates hereof \nand shall pay all the dues till the completion of sale. \n \nb    The present M.S.E.B meter (Consumer no 170064590751) stands in the name of the present \nAssignor and he hereby undertakes to transfer the M.S.E.B in the favour of present \nAssignee.The M.S.E.B charges till date of the possession of the assignor will be paid by the \nassignor . However, after the date of possession assignee shall pay the same . As well as M.S.E.B \nmeter transfer charges will be done by the assignee. \n \nc  That the Vendor is the sole and Absolute owner and beneficiary of the said flat duly standing \nin the name of the vendor in the books and all other records of the builder and is absolutely \nentitled to the same and to all incidental rights there to and two exclusive rights to the use , \nenjoyment and occupation of the said flat and except the Vendor no other person or persons \nhave any right , title , intrest, claim, or deemed of any nature whatsoever unto or upon the said \npremises; \n \nd   That notwithstanding any act, deed, matter or thing whatsoever done, omitted, by the",
+          "similarity": 0.618
+        },
+        {
+          "source_id": "E2",
+          "filename": "Deed.pdf",
+          "page_number": 5,
+          "all_pages": [
+            5
+          ],
+          "text": "4       The Vendor shall sign and execute all necessary documents , applications and other \nassurences and may be necessary or as may be determined or required by the said builder and \nconcerned Government authorities for transfer of flat and records thereof in the name of the \nPurchasers. \n \n5       The Purcharers both hereby agree and convenant to become member of such Society or \nApartment and to abide by and observe and perform all the rules and regulations and bye-laws \nof the said Society or Apartment from time in force. \n \n6         The Vendor shall hereinafter as and when required by the Purchasers at the cost of the \nPurchasers sign and execute in the fovour of the Purchasers all such further and other \ndocuments as may be required for effective and complete transfer of the said flat  in the favour \nof the Purchasers in the record of the Builder and the Society that may be formed in future and \nfor implementing terms of this Agreement. \n \n7        The Vendor has represented and assured to the Purchasers that his title to the said flat is \nfree from all ecumbrances and",
+          "similarity": 0.5962
+        },
+        {
+          "source_id": "E3",
+          "filename": "Deed.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "AND \n1 . MR. GANESH RAJENDRA DHANGAR \nAge 32 years , Occupation -Service \nPAN NO-BSNPD5449N \nADHAR NO-6051 3602 1010 \nResiding At -Shivaji Nagar Ranipura Dondaicha Dhule 425408 \n \n2 . MRS. DIPIKA GANESH DHANGAR \nAge 32 years , Occupation- Homemaker \nPAN NO-KAHPD4138M \nADHAR NO-7938 1345 2226 \nResiding At -Shivaji Nagar Ranipura Dondaicha Dhule 425408 \n \nHereinafter called as the “ASSIGNEE/PURCHASER”    which expression unless repugnant to the \ncontext shall deem to mean and include his legal heirs executers administrators and Assignees. \n                                                                                   ………..THE PARTY OF THE SECOND PART \nWHEREAS the Vendor is fully seized off and or sufficiently entitled to Flat bearing No .605, \nSIXTH FLOOR, admeasuring carpet area about 28.71 Sq Mtrs. Carpet with enclosed balcony \n8.73 Sq Mtrs .Carpet area with terrace area about 3.66 Sq Mtrs and also 2.88 Sq Mtrs In the",
+          "similarity": 0.6129
+        },
+        {
+          "source_id": "E4",
+          "filename": "Deed.pdf",
+          "page_number": 5,
+          "all_pages": [
+            5
+          ],
+          "text": "nd \nfor implementing terms of this Agreement. \n \n7        The Vendor has represented and assured to the Purchasers that his title to the said flat is \nfree from all ecumbrances and claims of whatsoever nature. In the event it is found that \nVendors title to the said flat is defective or any claim is made on the said flat or Purchasers have \nsuffered any loss or damages by the statements, decelaration whether directly or indirectly is \nmade on the said Flat Vendor agree to indemnify the Purchasers and hereby indemnifies the \nPurchasers /their nominies /their successors in the title on account of above and the vendor \nshall reimburse the Purchasers and /or their nominies and/or successors in the title for the \nsame on their making demand to that effect. \n8        The stamp duty and the registration charges shall be born and paid by the purchasers only \n. \n \nAlong with the common facilities and common use of staircases, water , connection, common \nparking and common drainage line & W. C as per rules   \n \n                                                   SCHEDULE OF THE PROPERTY A",
+          "similarity": 0.6083
+        },
+        {
+          "source_id": "E5",
+          "filename": "Deed.pdf",
+          "page_number": 3,
+          "all_pages": [
+            3
+          ],
+          "text": "e , intrest, claim, or deemed of any nature whatsoever unto or upon the said \npremises; \n \nd   That notwithstanding any act, deed, matter or thing whatsoever done, omitted, by the \nVendor or any person or persons lawfully and equitably claiming by, from , though, or in trust \nfor the Vendor , the Vendor has full power and absolute authority in her own right to transfer \nthe said flat and to relinquish and transfer all her rights, title and interest therein in favour of \nthe Purchasers.",
+          "similarity": 0.6036
+        },
+        {
+          "source_id": "E6",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "that the vondor has nither recived any notice from the said Builder for or in \nrelation to any breach of any of the terms  nor are there any actions or proceeding pending \nagainst the Vendor instituted by the said Builder in respect of the said Flat; \n \ni   That the Vendor has not recived any Notice for acquisition or requisition of the said Flat; \n \nj    The Assignor has delivered the ASSIGNEE the documents relating to the title pertaining to \nthe said Flat. The Purchasers shall be entitled to become the members of the proposed society \nwhich shall be formed by the Flat Purchasers in the said building the Society in place of the \nVendor. \n \nk    The Purchasers shall be entitled to become members of the society which shall be formed \nby the Flat Purchasers in the said building  SHYAMA FORTUNE  B Wing Co-Operative Housing \nSociety Ltd registered with Serial No …………………………………………………………………….. dated ………. \nIn the place of the Vendor . Assignee has undertaken the responsibility of making payment of \nthe society  transfer fee’s till the date of Assignment Deed. \n \n3        The Vendor shall",
+          "similarity": 0.5946
+        },
+        {
+          "source_id": "E7",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "he place of the Vendor . Assignee has undertaken the responsibility of making payment of \nthe society  transfer fee’s till the date of Assignment Deed. \n \n3        The Vendor shall bear and pay all outgoings in respect of the said flat including all rates, \ntaxes and charges for compsumption of electricity , water etc. and all the dues and charges \npayable to the said builder  till the date of Completion of Sale and the Purchaser shall bear and \npay such all outgoing charges and dues to the said Builder / Society from the date of \ncompletion of sale and receving possession of the said Flat.",
+          "similarity": 0.59
+        },
+        {
+          "source_id": "E8",
+          "filename": "Deed.pdf",
+          "page_number": 2,
+          "all_pages": [
+            2
+          ],
+          "text": "Moshi/20/2020 dated 06.07.2020 and also part Compleation \nCertificate of Building A bearing No 02/2021 date 05.01.2021 authencated copy of the said \ncertificate is attached to this deed at Annexure-A \n \nAND WHEREAS M/S  SHYAMA BUILDERS has registered the project under the provision of the \nReal Estate (Regulations & Development )Act , 2016 with the Real Estate Regulatory Authority \nBearing Certificate no . P52100009872. \n \nAND WHEREAS  the parties agreed to reduce the terms agreed to by and between them int \nwriting . The Purchasers have agreed to purchase and acquire from the said Flat along with \nright, title and interest therein , free from all encumbrances and reasonable doubts which the \nvendor has agreed to do upon the terms and condition recorded hereinafter; \n \nNOW THIS AGREEMENT WITHNESSETH and it is hereby agreed by and between the parties \nhere to as follows:- \n \nThat the Vendor hereby agrees to sell, transfer, convey and assign his right , title and interest in \nthe said to Flat bearing No. 605. SIXTH Floor, admeasuring carpet area about 28.71 Sq Mtrs. \nCarpet with",
+          "similarity": 0.5847
+        },
+        {
+          "source_id": "E9",
+          "filename": "Deed.pdf",
+          "page_number": 3,
+          "all_pages": [
+            3
+          ],
+          "text": "reasonable doubts for the total consideration of Rs. 39,00,000/-(Rupees Thirty Nine Lacks \nOnly) \n \n1-To be paid in the following manner:-- \nSr. No           Amount                        Particulars \n       1       50000 Paid by Assignee to Assignor by, \nIMPS NO.514715617366, \nBank-ICICI , Branch Chinchwad, \nBearing Date :- \n       2        1,50,000 Paid by Assignee to Assignor by, \nIMPS NO.516218963123, \nBank-ICICI, Branch Chinchwad, \n   \n   \n   \n   \n \n   So, today the ASSIGNEE paid the total consideration to the Assignor & Assignor acknowledge \n& admits the same . \n \n2 . The Vendor Both hereby covenant with the Purchasers as follows:-- \n \na     That the Vendor has duly paid and discharged in full all the dues and liabilities in respect of \nthe said flat including the Muncipal Outgoings , taxes , rates, Maintanance charges, Electricity \nCharges etc, payable to the Builder/Society and concerned Authorities upto the dates hereof \nand shall pay all the dues till the completion of sale. \n \nb    The present M.S.E.B meter (Consumer no 170064590751) stands in the name of the present",
+          "similarity": 0.5304
+        },
+        {
+          "source_id": "E10",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "nd that the same are free from all \necunbrances and there is no pending litigation of any kind whatsoever and further that the \nVendor shall so long as this agreement is valid, not enter into any agreement/writing with any \nthird party for creating any rights of whatsoever nature in respect of the said flat; \n \ng   That the Purchaser shall on the Completion of the transfer peacefullyand quietly be entitled \nto hold and own the said flat and all incidental thereto including the right to enter upon and \nremain in sole occupation and enjoyment of the said flat and/or any part thereof in the \nPurchasers own right without any interference disturbance , interruption, claim or demand \nwhatsoever and/or any person or persons lawfully and equitably claming by from , through \nunder or in trust for the Vendor; \n \nh  That the vendor has duly complied with observed performed with all the condition of the \nAgreement and that the vondor has nither recived any notice from the said Builder for or in \nrelation to any breach of any of the terms  nor are there any actions or proceeding pending \nagainst",
+          "similarity": 0.5695
+        },
+        {
+          "source_id": "E11",
+          "filename": "Deed.pdf",
+          "page_number": 1,
+          "all_pages": [
+            1
+          ],
+          "text": "DEED OF ASSIGNMENT \n   This DEED OF ASSIGNMENT MADE AT PUNE, on the 17th Day of July, Two Thousand and \nTwenty Five (2025) \n                                                                    BETWEEN \n1 . MR. RAMKRISHNA MUKUNDA BHAMARE \nAge 59 years, Occupation- Service \nPAN NO -ADZPB3451G \nADHAR NO – 9486 9343 6786 \nResiding At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 \n \n2 . MRS. RAJANI RAMKRISHNA BHAMARE \nAge 54 years, Occupation -Homemaker \nPAN NO – FKEPB1070E \nADHAR NO – 9035 0628 0714 \nResiding At – Flat No 605 , B Wing, Shyama Fortune , New Alandi Road 412105 \n  \nHereinafter called as the “ASSIGNOR/VENDOR”    which expression unless repugnant to the \ncontext shall deem to mean and include his legal heirs executers administrators and Assignees. \n                                                                       ………….THE PARTY OF THE FIRST PART \n                                                                        AND \n1 . MR. GANESH RAJENDRA DHANGAR \nAge 32 years , Occupation -Service \nPAN NO-BSNPD5449N \nADHAR NO-6051 3602 1010 \nResiding At -Shivaji",
+          "similarity": 0.5689
+        },
+        {
+          "source_id": "E12",
+          "filename": "Deed.pdf",
+          "page_number": 4,
+          "all_pages": [
+            4
+          ],
+          "text": "e   That neither the Vendor nor anyone on her behalf has committed or omitted any act, deed, \nmatter or thing whereby her holding of the Flat and incidental rights thereto including the right \nto peaceful use, occupation , ownership, and enjoyment of the said flats and other rights and \nbenefits in respect thereof may become or may be prejudicially affected or ecumbered in any \nmanner or whereby the said flat on her other rights , title and interest therein may become \nliable to attachment and/or sale whether by a decree or order of the Competent Court or \notherwise; \n \nf   That the Vendor has not created or purported to create any tenency, license, charge, lease, \nmortgage, lien or any kind of third party rights over the said Flat and no other person or party \nhave any right, title or interest, claim or demand in to or upon the same either by way of \nmortage, gift, trust, inheritance, lease or otherwise and that the same are free from all \necunbrances and there is no pending litigation of any kind whatsoever and further that the \nVendor shall so long as this agreement is valid, not",
+          "similarity": 0.5599
+        }
+      ],
+      "top_similarity": 1.0,
+      "abstained": false,
+      "legal_boundary": false,
+      "message": "Findings below are limited to claims that passed source-ID and verbatim-quote checks. Review the quote before relying on an interpretation.",
+      "reason": "validated_findings"
+    }
+  }
+]
