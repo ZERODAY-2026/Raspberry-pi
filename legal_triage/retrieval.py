@@ -36,59 +36,8 @@ _HYBRID_ALPHA: float = 0.70   # weight for embedding score (1 - alpha goes to BM
 
 
 def _tokenize(text: str) -> list[str]:
-    """Tokenizer for BM25 – handles Indian currency/number formatting.
-
-    * Normalises Indian comma-separated numbers (14,75,000 → 1475000)
-      so BM25 can match the digits regardless of comma placement.
-    * Keeps the rupee symbol ₹ as a standalone token.
-    * Strips trailing /- (common Indian currency suffix).
-    """
-    # Collapse Indian comma-formatted numbers to plain digit strings
-    normalised = re.sub(r'(\d(?:[,\d]{0,6}\d))\/-?', lambda m: m.group(1).replace(',', ''), text)
-    normalised = re.sub(r'(\d[\d,]*)\/-?', lambda m: m.group(1).replace(',', ''), normalised)
-    # Tokenize: include ₹ symbol and standard alphanum tokens
-    tokens = re.findall(r'[\u20b9₹]|[a-z0-9]+', normalised.casefold())
-    return tokens
-
-
-# Indian legal term expansions for query-time augmentation
-_LEGAL_TERM_EXPANSIONS: dict[str, list[str]] = {
-    "cheque":     ["cheque", "check", "draft", "negotiable instrument", "payment instrument"],
-    "bounced":    ["bounced", "dishonoured", "dishonored", "returned unpaid", "not honoured"],
-    "lakh":       ["lakh", "lac", "100000"],
-    "crore":      ["crore", "10000000"],
-    "rs":         ["rs", "inr", "rupees", "rupee"],
-    "hdfc":       ["hdfc", "bank"],
-    "icici":      ["icici", "bank"],
-    "sbi":        ["sbi", "state bank", "bank"],
-    "invoice":    ["invoice", "bill", "payment"],
-    "drawer":     ["drawer", "issuer", "payer"],
-    "drawee":     ["drawee", "payee", "recipient"],
-    "legal notice": ["legal notice", "demand notice", "notice"],
-    "section 138": ["section 138", "negotiable instruments act", "cheque dishonour"],
-}
-
-
-def _expand_legal_query(query: str) -> str:
-    """Expand Indian legal shorthand in a query to improve embedding and BM25 recall.
-
-    Returns the original query with expansions appended so that both the original
-    terms and their synonyms are embedded together.
-    """
-    lowered = query.casefold()
-    extras: list[str] = []
-    for term, synonyms in _LEGAL_TERM_EXPANSIONS.items():
-        if term in lowered:
-            # Add synonyms that aren't already in the query
-            extras.extend(s for s in synonyms if s not in lowered)
-    if not extras:
-        return query
-    # Append unique extras without duplicating existing words
-    seen: set[str] = set(lowered.split())
-    unique_extras = [e for e in extras if e not in seen]
-    if not unique_extras:
-        return query
-    return query + " " + " ".join(unique_extras)
+    """Simple whitespace + punctuation tokenizer for BM25."""
+    return re.findall(r"[a-z0-9',.-]+", text.casefold())
 
 
 @dataclass
@@ -209,15 +158,11 @@ def hybrid_retrieve_question(
 
     hybrid_score = alpha * embed_score + (1 - alpha) * bm25_score
 
-    Indian legal documents use domain-specific shorthand (cheque, Rs., Lakh,
-    HDFC, /-, Indian comma-formatted numbers) that dense embeddings may not
-    align well with.  The query is expanded with synonyms before embedding and
-    BM25 tokenization to improve recall.  The similarity threshold gate in
-    agent.py is evaluated against the hybrid combined score so that a strong
-    BM25 keyword match is not blocked by a weak embedding cosine alone.
+    This improves recall for lexical legal terms (exact amounts, clause numbers,
+    party names) that dense embeddings sometimes dilute across similar neighbours.
+    Falls back to pure embedding retrieval when the index has no BM25 data.
     """
-    expanded_query = _expand_legal_query(query)
-    embed_scores = _rank_for_query(index, expanded_query, runtime)  # cosine, range ~[-1, 1]
+    embed_scores = _rank_for_query(index, query, runtime)  # already cosine, range ~[-1, 1]
     # Normalise embedding scores to [0, 1] for blending
     e_min, e_max = float(embed_scores.min()), float(embed_scores.max())
     if e_max > e_min:
@@ -226,20 +171,28 @@ def hybrid_retrieve_question(
         norm_embed = embed_scores - e_min  # all-zero when all scores equal
 
     if index._bm25_df:
-        # Tokenize the *expanded* query so BM25 also benefits from synonyms
-        query_tokens = _tokenize(expanded_query)
+        query_tokens = _tokenize(query)
         bm25 = _bm25_scores(query_tokens, index)
         combined = alpha * norm_embed + (1.0 - alpha) * bm25
     else:
         combined = norm_embed
 
     k = top_k or SETTINGS.top_k_question
-    ordered = np.argsort(combined)[::-1][:k]
-    # Gate abstention on the *hybrid* score, not just the raw embedding cosine,
-    # so that a strong BM25 keyword match is not blocked by a low embedding score.
-    top_hybrid_score = float(combined[ordered[0]]) if len(ordered) else -1.0
-    results = [(index.chunks[int(p)], float(embed_scores[p])) for p in ordered]
-    return results, top_hybrid_score
+    ordered = [int(p) for p in np.argsort(combined)[::-1][:k]]
+
+    # BM25 can move an exact keyword hit above the strongest semantic match.
+    # Keep the dense winner in the returned evidence set so the retrieval gate
+    # measures a passage that the model will actually see, rather than a
+    # different (possibly weaker) passage that happened to rank first in the
+    # hybrid blend.
+    if ordered and len(embed_scores):
+        dense_best = int(np.argmax(embed_scores))
+        if dense_best not in ordered:
+            ordered[-1] = dense_best
+
+    top_score = max((float(embed_scores[p]) for p in ordered), default=-1.0)
+    results = [(index.chunks[p], float(embed_scores[p])) for p in ordered]
+    return results, top_score
 
 
 def retrieve_triage(
@@ -310,4 +263,123 @@ def retrieve_triage_per_topic(
 
     ordered_positions = sorted(candidates, key=lambda p: candidates[p], reverse=True)[:max_total]
     results = [(index.chunks[position], candidates[position]) for position in ordered_positions]
+    return results, global_best
+
+
+# ---------------------------------------------------------------------------
+# Windowed map-reduce triage (B3 fix: prevents silent context overflow)
+# ---------------------------------------------------------------------------
+
+_CHARS_PER_TOKEN = 3.5   # conservative estimate
+_PROMPT_OVERHEAD_TOKENS = 600   # system prompt + wrapper text
+
+
+def _estimate_tokens(text: str) -> int:
+    return int(len(text) / _CHARS_PER_TOKEN)
+
+
+def _build_window_prompt_text(chunks: list[Chunk]) -> str:
+    """Build the source block text for a list of chunks (for token-budget estimation)."""
+    parts: list[str] = []
+    for i, chunk in enumerate(chunks, start=1):
+        source_id = f"E{i}"
+        parts.append(
+            f"<{source_id} | file={chunk.filename} | page={chunk.page_number}>\n"
+            f"{chunk.text}\n</{source_id}>"
+        )
+    return "\n\n".join(parts)
+
+
+def windowed_triage(
+    index: LocalIndex,
+    runtime: LocalOllama,
+    progress_callback: Optional[callable] = None,  # type: ignore[type-arg]
+) -> tuple[list[tuple[Chunk, float]], float]:
+    """Score chunks in bounded windows and return a prompt-sized candidate set.
+
+    For documents that do not fit in OLLAMA_NUM_CTX the chunk list is split into
+    ordered windows that each fit within the token budget.  Topic retrieval is
+    run against each window, then candidates are merged, de-duplicated by
+    chunk_id, and returned by retrieval score. The final set is capped to the
+    same token budget because the caller puts these chunks in one model prompt.
+
+    ``progress_callback(current_window, total_windows)`` is called before each
+    window so the UI can display progress ("window 2 of 4").
+
+    Returns the same (results, top_score) tuple as retrieve_triage_per_topic.
+    """
+    chunks = index.chunks
+    if not chunks:
+        return [], -1.0
+
+    # Token budget per window: leave room for system prompt, wrapper, and output.
+    budget_tokens = int(SETTINGS.num_ctx * 0.75) - _PROMPT_OVERHEAD_TOKENS
+    budget_tokens = max(budget_tokens, 512)  # never go below 512
+
+    # Split chunks into windows that fit the budget.
+    windows: list[list[Chunk]] = []
+    current_window: list[Chunk] = []
+    current_tokens = 0
+    for chunk in chunks:
+        chunk_tokens = _estimate_tokens(chunk.text) + 80  # 80 for tag overhead
+        if current_window and current_tokens + chunk_tokens > budget_tokens:
+            windows.append(current_window)
+            current_window = []
+            current_tokens = 0
+        current_window.append(chunk)
+        current_tokens += chunk_tokens
+    if current_window:
+        windows.append(current_window)
+
+    if not windows:
+        return [], -1.0
+
+    # Run per-topic retrieval scoped to each window's chunks.
+    query_list = list(TRIAGE_TOPIC_SEARCHES.values())
+    query_vectors = runtime.embed(query_list, is_query=True)
+
+    all_candidates: dict[int, float] = {}
+    global_best = -1.0
+    total_windows = len(windows)
+
+    for w_idx, window_chunks in enumerate(windows):
+        if progress_callback is not None:
+            progress_callback(w_idx + 1, total_windows)
+
+        # Build window position map: local_index → global_index
+        global_indices = [index.chunks.index(c) for c in window_chunks]
+
+        window_vectors = index.vectors[global_indices]  # shape: (n_window, dim)
+        score_matrix = query_vectors @ window_vectors.T  # (n_topics, n_window)
+
+        window_best = float(np.max(score_matrix)) if score_matrix.size else -1.0
+        if window_best > global_best:
+            global_best = window_best
+
+        top_k_per_topic = max(3, SETTINGS.top_k_triage // len(TRIAGE_TOPIC_SEARCHES))
+        for row in score_matrix:
+            for local_pos in np.argsort(row)[::-1][:top_k_per_topic]:
+                score = float(row[local_pos])
+                if score >= SETTINGS.min_retrieval_similarity:
+                    global_pos = global_indices[int(local_pos)]
+                    all_candidates[global_pos] = max(score, all_candidates.get(global_pos, -1.0))
+
+    if not all_candidates:
+        # Fallback: return top-scoring chunks regardless of threshold
+        per_chunk = np.max(query_vectors @ index.vectors.T, axis=0)
+        global_best = float(np.max(per_chunk)) if per_chunk.size else -1.0
+        top_n = SETTINGS.top_k_triage * len(TRIAGE_TOPIC_SEARCHES)
+        fallback_positions = [int(p) for p in np.argsort(per_chunk)[::-1][:top_n]]
+        all_candidates = {p: float(per_chunk[p]) for p in fallback_positions}
+
+    ordered = sorted(all_candidates, key=lambda p: all_candidates[p], reverse=True)
+    results: list[tuple[Chunk, float]] = []
+    selected_tokens = 0
+    for position in ordered:
+        chunk = index.chunks[position]
+        chunk_tokens = _estimate_tokens(chunk.text) + 80  # source tag and metadata
+        if selected_tokens + chunk_tokens > budget_tokens:
+            continue
+        results.append((chunk, all_candidates[position]))
+        selected_tokens += chunk_tokens
     return results, global_best
